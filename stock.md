@@ -4,7 +4,7 @@
 ``` 
 bash --version
 ```
-
+- [stock.sh](stock.sh)
 ```
 GNU bash, version 5.1.16(1)-release (x86_64-apple-darwin20.6.0)
 Copyright (C) 2020 Free Software Foundation, Inc.
