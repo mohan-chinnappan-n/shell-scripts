@@ -13,6 +13,12 @@ Copyright (C) 2020 Free Software Foundation, Inc.
 
 ```
 
+## To upgrade bash in MacOS
+```
+brew install bash
+
+```
+
 ## Run
 ```
 bash stock.sh CRM
