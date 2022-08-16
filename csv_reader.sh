@@ -1,5 +1,4 @@
 #!/bin/bash
-# ref: https://bash.cyberciti.biz/guide/While_loop
 # IFS = Internal Field Separator 
 
  
