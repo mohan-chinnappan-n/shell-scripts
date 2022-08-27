@@ -1,5 +1,7 @@
 #!/bin/bash
 
+un="mohan.chinnappan.n_ea2@gmail.com"
+
 help() {
 	if [[ "$1" -ne 1 ]] 
 	then
@@ -17,17 +19,17 @@ page=$1
 case $page in
 	setup)
         echo "=== opening setup page ==="
-	sfdx force:org:open -u mohan.chinnappan.n_ea2@gmail.com -p  /lightning/setup/SetupOneHome/home
+	sfdx force:org:open -u $un -p  /lightning/setup/SetupOneHome/home
 	;;
 
 	sites)
 	echo "=== opening sites page ==="
-	sfdx force:org:open -u mohan.chinnappan.n_ea2@gmail.com -p  /lightning/setup/SetupNetworks/home
+	sfdx force:org:open -u $un  -p  /lightning/setup/SetupNetworks/home
 	;;
 
         ds)
         echo "=== opening deployment status ==="
-	sfdx force:org:open -u mohan.chinnappan.n_ea2@gmail.com -p   lightning/setup/DeployStatus/home
+	sfdx force:org:open -u $un  -p   lightning/setup/DeployStatus/home
 esac
 
 
