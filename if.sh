@@ -13,8 +13,8 @@
 
 #if the variable is not set in $1 use the default "apple"
 fruit="${1:-apple}"
+#echo $fruit
 
-echo $fruit
 if [ $fruit == "apple" ]; then 
 	echo "An $fruit day keeps the doctor away!"
 elif [ $fruit == "mango" ]; then 
