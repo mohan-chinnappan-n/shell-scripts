@@ -2,5 +2,6 @@
     "case":  "case.sh",
     "if": "if.sh",
     "hw": "hw.sh",
-    "csv_reader": "csv_reader.sh"
+    "csv_reader": "csv_reader.sh",
+    "printf" : "printf.sh"
 }
