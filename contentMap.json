@@ -1,13 +1,13 @@
 {
-    "case":  "case.sh",
+  "bash": {
+    "case": "case.sh",
     "if": "if.sh",
     "hw": "hw.sh",
     "csv_reader": "csv_reader.sh",
-    "printf" : "printf.sh",
-
-    "open_org": "open_org.sh",
-
-    "py": {
-	"countries": "countries.py"
-    } 
+    "printf": "printf.sh",
+    "open_org": "open_org.sh"
+  },
+  "py": {
+    "countries": "countries.py"
+  }
 }
