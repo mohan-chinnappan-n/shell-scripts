@@ -12,7 +12,7 @@
 
 
 #if the variable is not set in $1 use the default "apple"
-fruit="${1:=apple}"
+fruit="${1:-apple}"
 
 echo $fruit
 if [ $fruit == "apple" ]; then 
