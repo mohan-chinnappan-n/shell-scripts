@@ -5,5 +5,9 @@
     "csv_reader": "csv_reader.sh",
     "printf" : "printf.sh",
 
-    "open_org": "open_org.sh"
+    "open_org": "open_org.sh",
+
+    "py": {
+	"countries": "countries.py"
+    } 
 }

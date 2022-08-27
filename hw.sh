@@ -1,2 +1,4 @@
 #!/bin/bash
-echo "Hello from Bash and Brian Fox!"
+echo "============================================"
+echo "Hello from Bash, a gift from our Brian Fox!"
+echo "============================================"
