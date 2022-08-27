@@ -10,7 +10,7 @@ csv_reader() {
         echo "=== reading file: $1 with field separtor: $2 with start:$3 ==="
 	while read -r fields
 	do
-		echo $fields
+		echo  $fields
 	done < <(tail -n +$start $input_file)
 }
 
