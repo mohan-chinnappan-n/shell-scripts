@@ -72,5 +72,6 @@ print_msg "Completed writing destructiveChanges.xml"
 #print_msg "Getting the html view of the destructiveChanges.xml"
 #sfdx mohanc:xml:transform -i destructiveChanges/destructiveChanges.xml -m Package
 
-echo sfdx force:source:deploy -x destructiveChanges/package.xml  --predestructivechanges destructiveChanges/destructiveChanges.xml  -c --verbose --loglevel TRACE 
+print_msg "Deploy command"
+echo sfdx force:source:deploy -u ${username}  -x destructiveChanges/package.xml  --predestructivechanges destructiveChanges/destructiveChanges.xml  -c --verbose --loglevel TRACE 
 
