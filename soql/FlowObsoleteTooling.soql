@@ -1,0 +1,7 @@
+
+SELECT Id, Status, Definition.DeveloperName, VersionNumber
+FROM Flow 
+ WHERE Definition.NamespacePrefix = null 
+       AND Status = 'Obsolete' 
+ORDER BY Definition.DeveloperName, VersionNumber
+
