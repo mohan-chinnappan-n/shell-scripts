@@ -7,5 +7,5 @@ find . -name '* copy.*'  2>&1 | tee /tmp/copy_dup_files.txt
 
 
 # to delete these files, uncomment the next line
-# cat 2_dup_files.txt| sed 's/\(.*\)/"\1"/g' | xargs rm -f 
+# cat /tmp/2_dup_files.txt| sed 's/\(.*\)/"\1"/g' | xargs rm -f 
 # cat /tmp/copy_dup_files.txt | sed 's/\(.*\)/"\1"/g' | xargs rm -f 
