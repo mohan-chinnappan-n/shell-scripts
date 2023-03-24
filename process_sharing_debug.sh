@@ -13,8 +13,9 @@ if [ $# -lt 1 ]; then
  exit 1
 fi
 
+query="https://raw.githubusercontent.com/mohan-chinnappan-n/shell-scripts/master/soql/user.soql"
 uname=$1
-users=`sfdx mohanc:data:query -u ${uname} -q ~/.soql/user.soql  | cut -f '3' -d ',' | sed 's/"//g' `
+users=`sfdx mohanc:data:query -u ${uname} -q ${query} | cut -f '3' -d ',' | sed 's/"//g' `
  
 for user in ${users}; do
 	echo "=== Processing user: ${user}... ==="
