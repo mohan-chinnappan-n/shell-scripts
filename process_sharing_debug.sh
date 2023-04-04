@@ -37,7 +37,7 @@ done
 echo """ </ul>
   </div>
   <div class='col'> 
-    <img  width='1000' id='view'/>
+    <img  width='800' id='view'/>
   </div> 
  </div>
   <script>
