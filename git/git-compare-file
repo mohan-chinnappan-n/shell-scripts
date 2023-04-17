@@ -1,0 +1,30 @@
+#!/bin/bash
+
+echo =================================================
+echo === Git compare a file from 2 commit ids ===
+echo =================================================
+fromId=$1
+toId=$2
+file=$3
+
+usage="""
+
+Usage: git-compare-file fromCommitId toCommitId filePath.  Example: git-compare-file HEAD~4 HEAD ./src/driver.py
+
+"""
+
+
+if [ "$#" -ne 3 ]; then
+	echo $usage
+	exit 0
+fi
+
+git show $fromId:$3 | pbcopy 
+
+echo "=== Paste the clipboard content the left window..."
+open "https://mohan-chinnappan-n5.github.io/delta/diff.html"
+
+read -p "Press enter to continue"...
+
+git show $toId:$3 | pbcopy  
+echo "=== Paste the clipboard content the right window..."

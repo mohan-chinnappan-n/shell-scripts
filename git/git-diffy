@@ -1,0 +1,57 @@
+#!/usr/bin/env python3
+
+# mchinnappan
+
+import subprocess
+import argparse
+
+parser = argparse.ArgumentParser(description="SFLand git diff based package builder")
+parser.add_argument("--fromCommit", default="HEAD^", help="FROM CommitId (Default: HEAD^) ")
+parser.add_argument("--toCommit", default="HEAD", help="TO CommitId (Default: HEAD)")
+
+args = parser.parse_args()
+
+# Replace these with the commit hashes or branch names you want to compare
+
+fromId = args.fromCommit
+toId = args.toCommit
+
+
+
+# Get a list of all files that were changed between the two commits
+changed_files = subprocess.check_output(
+    ["git", "diff", "--name-only", fromId, toId]
+).decode("utf-8").splitlines()
+
+# Get a list of all files that were deleted between the two commits
+deleted_files = subprocess.check_output(
+    ["git", "diff", "--diff-filter=D", "--name-only", fromId, toId]
+).decode("utf-8").splitlines()
+
+# Get a list of all files that were added between the two commits
+added_files = subprocess.check_output(
+    ["git", "diff", "--diff-filter=A", "--name-only", fromId, toId]
+).decode("utf-8").splitlines()
+
+# Get a list of all files that were added between the two commits
+modified_files = subprocess.check_output(
+    ["git", "diff", "--diff-filter=M", "--name-only", fromId, toId]
+).decode("utf-8").splitlines()
+
+
+# Print the results
+print("=== Changed files: === ")
+for filename in changed_files:
+    print(filename)
+
+print("=== Added files: ===")
+for filename in added_files:
+    print(filename)
+
+print("=== Modified files: ===")
+for filename in modified_files:
+    print(filename)
+
+print("=== Deleted files: ===")
+for filename in deleted_files:
+    print(filename)
