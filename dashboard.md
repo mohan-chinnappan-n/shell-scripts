@@ -2,6 +2,7 @@
 
 ## How to replace the runningUser in the given dashboard xml
 
+- Input file
 ```
 cat /tmp/db.xml
 ```
@@ -30,6 +31,7 @@ cat /tmp/db.xml
 
 ```bash
 USER='ken@email.com'; cat /tmp/db.xml | sed "s/\(<runningUser>\)\(.*\)\(<\/runningUser>\)/\1${USER}\3/"
+```
 ```xml
 <Dashboard xmlns="http://soap.sforce.com/2006/04/metadata">
     <backgroundEndColor>#FFFFFF</backgroundEndColor>
