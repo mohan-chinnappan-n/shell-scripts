@@ -36,7 +36,7 @@ cat /tmp/db.xml
 ```
 ---
 ### Using ENV variable
-
+<a name='env'></a>
 ```bash
 USER='ken@email.com'; cat /tmp/db.xml | sed "s/\(<runningUser>\)\(.*\)\(<\/runningUser>\)/\1${USER}\3/"
 ```
@@ -63,6 +63,9 @@ USER='ken@email.com'; cat /tmp/db.xml | sed "s/\(<runningUser>\)\(.*\)\(<\/runni
 
 
 ### Hard-coded User (dennis@email.com) 
+
+<a name='hc'></a>
+
 ```bash
 cat /tmp/db.xml | sed 's/\(<runningUser>\)\(.*\)\(<\/runningUser>\)/\1dennis@email.com\3/'
 ```
