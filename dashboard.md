@@ -2,6 +2,14 @@
 
 ## How to replace the runningUser in the given dashboard xml
 
+## Topics
+
+- [Using ENV variable](#env)
+- [Hard-coded User](#hc)
+- [Replace in all the files including files under the folders](#ipr)
+
+---
+
 - Input file
 ```
 cat /tmp/db.xml
@@ -52,6 +60,8 @@ USER='ken@email.com'; cat /tmp/db.xml | sed "s/\(<runningUser>\)\(.*\)\(<\/runni
 
 ```
 ---
+
+
 ### Hard-coded User (dennis@email.com) 
 ```bash
 cat /tmp/db.xml | sed 's/\(<runningUser>\)\(.*\)\(<\/runningUser>\)/\1dennis@email.com\3/'
@@ -76,3 +86,18 @@ cat /tmp/db.xml | sed 's/\(<runningUser>\)\(.*\)\(<\/runningUser>\)/\1dennis@ema
 
 ```
 
+---
+<a name='ipr'></a>
+### Replace in all the files including files under the folders
+
+- on macOS
+```bash
+USER='ken@email.com'; find . -type f -print0 | xargs -0   sed -i ""  "s/\(<runningUser>\)\(.*\)\(<\/runningUser>\)/\1${USER}\3/"
+
+```
+
+- on Linux 
+```bash
+USER='ken@email.com'; find . -type f -print0 | xargs -0   sed -i   "s/\(<runningUser>\)\(.*\)\(<\/runningUser>\)/\1${USER}\3/"
+
+```
