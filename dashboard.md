@@ -93,6 +93,8 @@ cat /tmp/db.xml | sed 's/\(<runningUser>\)\(.*\)\(<\/runningUser>\)/\1dennis@ema
 <a name='ipr'></a>
 ### Replace in all the files including files under the folders
 
+- First change to **dashboards** folder in the terminal
+
 - on macOS
 ```bash
 USER='ken@email.com'; find . -type f -print0 | xargs -0   sed -i ""  "s/\(<runningUser>\)\(.*\)\(<\/runningUser>\)/\1${USER}\3/"
