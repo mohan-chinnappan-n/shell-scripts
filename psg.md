@@ -13,7 +13,7 @@ find . -type f -print0 | xargs -0   sed -i ""   "s/<permissionSets>force__.*<\/p
 
 - Comment them out
 ```
-find . -type f -print0 | xargs -0     sed -i "" "s/\(<permissionSets>\)\(force__.*\)\(<\/permissionSets>\)/<\!-<\1\2\3-->/"
+find . -type f -print0 | xargs -0     sed -i "" "s/\(<permissionSets>\)\(force__.*\)\(<\/permissionSets>\)/<\!-- <\1\2\3 -->/"
 
 
 ```
@@ -27,7 +27,7 @@ find . -type f -print0 | xargs -0   sed -i    "s/<permissionSets>force__.*<\/per
 ```
 - Comment them out
 ```
-find . -type f -print0 | xargs -0     sed -i  "s/\(<permissionSets>\)\(force__.*\)\(<\/permissionSets>\)/<\!-<\1\2\3-->/"
+find . -type f -print0 | xargs -0     sed -i  "s/\(<permissionSets>\)\(force__.*\)\(<\/permissionSets>\)/<\!-- <\1\2\3 -->/"
 
 ```
 
