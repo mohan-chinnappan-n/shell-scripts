@@ -15,7 +15,6 @@ find . -type f -print0 | xargs -0   sed -i ""   "s/<permissionSets>force__.*<\/p
 ```
 find . -type f -print0 | xargs -0     sed -i "" "s/\(<permissionSets>\)\(force__.*\)\(<\/permissionSets>\)/<\!-<\1\2\3-->/"
 
-"
 
 ```
 ---
