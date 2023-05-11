@@ -4,14 +4,31 @@
 
 - In the terminal go to permissionsets folder
 
-- macOS
+## macOS
+- Remove
 ```
 find . -type f -print0 | xargs -0   sed -i ""   "s/<permissionSets>force__.*<\/permissionSets>//g"
 
 ```
 
-- Linux
+- Comment them out
+```
+find . -type f -print0 | xargs -0     sed -i "" "s/\(<permissionSets>\)\(force__.*\)\(<\/permissionSets>\)/<\!-<\1\2\3-->/"
+
+"
+
+```
+---
+
+## Linux
+- Remove
 ```
 find . -type f -print0 | xargs -0   sed -i    "s/<permissionSets>force__.*<\/permissionSets>//g"
 
 ```
+- Comment them out
+```
+find . -type f -print0 | xargs -0     sed -i  "s/\(<permissionSets>\)\(force__.*\)\(<\/permissionSets>\)/<\!-<\1\2\3-->/"
+
+```
+
