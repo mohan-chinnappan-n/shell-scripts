@@ -7,7 +7,6 @@
 
 ## macOS
 
-```
 
 - Comment them out
 ```
