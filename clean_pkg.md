@@ -10,9 +10,8 @@
 
 - Comment them out
 ```
-find . -type f -print0 | xargs -0     sed -i "" "s/\(<members>\)\(engine.d\)\(<\/members>\)/<\!-- \1\2\3 -->/"
-find . -type f -print0 | xargs -0     sed -i "" "s/\(<members>\)\(lds.d\)\(<\/members>\)/<\!-- \1\2\3 -->/"
-
+PAT='engine.d'; find . -type f -print0 | xargs -0     sed -i "" "s/\(<members>\)\($PAT\)\(<\/members>\)/<\!-- \1\2\3 -->/"
+PAT='lds.d'; find . -type f -print0 | xargs -0     sed -i "" "s/\(<members>\)\($PAT\)\(<\/members>\)/<\!-- \1\2\3 -->/"
 
 
 ```
@@ -20,11 +19,14 @@ find . -type f -print0 | xargs -0     sed -i "" "s/\(<members>\)\(lds.d\)\(<\/me
 
 ## Linux
 
-```
 - Comment them out
 
-find . -type f -print0 | xargs -0     sed  "s/\(<members>\)\(engine.d\)\(<\/members>\)/<\!-- \1\2\3 -->/"
-find . -type f -print0 | xargs -0     sed  "s/\(<members>\)\(lds.d\)\(<\/members>\)/<\!-- \1\2\3 -->/"
+```
 
+PAT='engine.d'; find . -type f -print0 | xargs -0     sed -i "" "s/\(<members>\)\($PAT\)\(<\/members>\)/<\!-- \1\2\3 -->/"
+PAT='lds.d'; find . -type f -print0 | xargs -0     sed -i "" "s/\(<members>\)\($PAT\)\(<\/members>\)/<\!-- \1\2\3 -->/"
+
+
+```
 
 
