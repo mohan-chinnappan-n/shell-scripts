@@ -29,4 +29,9 @@ PAT='lds.d'; find . -type f -print0 | xargs -0     sed -i "" "s/\(<members>\)\($
 
 ```
 
+- Comment the entire tag 
+```
+# TAG='div'; find . -type f -print0 | xargs -0  sed -i "s|<$TAG>|<!--&|; s|</$TAG>|&-->|" 
+
+```
 
