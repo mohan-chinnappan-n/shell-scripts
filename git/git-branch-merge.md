@@ -2,7 +2,8 @@
 # Git Branch Merge
 
 ## Create Git Repo
-
+- [script](git-branch-merge.sh)
+-
 ```
 ~/proj1  >git init
 Initialized empty Git repository in /Users/mchinnappan/proj1/.git/
