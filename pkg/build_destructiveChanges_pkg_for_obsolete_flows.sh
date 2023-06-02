@@ -64,7 +64,7 @@ echo """
 <?xml version=1.0 encoding=UTF-8 standalone=yes?>
 <Package xmlns=http://soap.sforce.com/2006/04/metadata>
 <version>56.0</version>
-</Package
+</Package>
 """ > destructiveChanges/package.xml
 
 print_msg "Completed writing destructiveChanges.xml"
