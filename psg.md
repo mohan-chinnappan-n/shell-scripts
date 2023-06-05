@@ -2,7 +2,7 @@
 
 - Remove PermissionSets with ```force__``` prefix/namespace in the PermissionSetGroups files
 
-- In the terminal go to permissionsets folder
+- In the terminal go to **permissionsetgroups** folder
 
 ## macOS
 - Remove
