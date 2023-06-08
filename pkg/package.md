@@ -4,6 +4,8 @@
 
 - In the terminal go to the folder where **package.xml** is present
 
+## macOS
+
 
 - Comment them out
 ```
