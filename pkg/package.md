@@ -14,7 +14,6 @@ find . -type f -print0 | xargs -0     sed -i ""  "s/\(<members>\)\(force__.*\)\(
 
 ## Linux
 
-```
 - Comment them out
 ```
 find . -type f -print0 | xargs -0     sed -i   "s/\(<members>\)\(force__.*\)\(<\/members>\)/<\!-- \1\2\3 -->/"
