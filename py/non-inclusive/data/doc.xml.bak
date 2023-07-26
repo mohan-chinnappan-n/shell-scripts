@@ -1,1 +1,8 @@
-<fruits> <fruit name='mango'>100</fruit> <fruit name='apple'>200</fruit> <fruit name='master'>300</fruit> </fruits>
+<fruits>
+ <fruit name='mango'>100</fruit>
+ <fruit name='apple'>200</fruit>
+ <fruit name='master'>300</fruit>
+
+
+
+</fruits>
