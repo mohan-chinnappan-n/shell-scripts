@@ -1,0 +1,1 @@
+The software engineer will present his work to the team. She should be prepared to explain her design choices. A good programmer always tests his code thoroughlly. Avoid using dummy variables and dummy functions. Commit the code into the master branch. This application uses master and slave architecture

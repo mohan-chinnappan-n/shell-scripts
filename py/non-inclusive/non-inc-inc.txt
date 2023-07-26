@@ -1,0 +1,30 @@
+he,they
+she,they
+him,them
+her,them
+his,theirs
+hers,theirs
+man,person
+men,people
+woman,person
+women,people
+boy,child
+girl,child
+boys,children
+girls,children
+chairman,chairperson 
+chairwoman,chairperson
+businessman,businessperson 
+businesswoman,businessperson
+mailman,postal worker
+fireman,firefighter
+policeman,police officer 
+policewoman,police officer
+stewardess,flight attendant
+waiter,server 
+waitress,server
+disabled,person with a disability
+handicapped,person with a disability
+dummy,sample
+master,main
+slave,client
