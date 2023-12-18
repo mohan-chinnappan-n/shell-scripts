@@ -1,0 +1,19 @@
+[
+    {
+        'condition': {'field': 'name', 'value': 'pear'},
+        'updates': [
+            {'field': 'quality', 'new_value': 'AWESOME'},
+            {'field': 'qty', 'equation': 'old_value * 2'}
+        ]
+    },
+
+     {
+        'condition': {'field': 'name', 'value': 'peach'},
+        'updates': [
+            {'field': 'quality', 'new_value': 'WOW'},
+            {'field': 'qty', 'equation': 'old_value / 2'}
+        ]
+    },
+
+   
+]

@@ -1,0 +1,15 @@
+[
+    {
+        'conditions': [('f1', 'abc'), ('f4', 400)],
+        'updates': [
+            {'field': 'f2', 'new_value': 'xyz'},
+            {'field': 'f4', 'equation': 'old_value * 2'}
+        ]
+    },
+    {
+        'conditions': [('f1', 'def')],
+        'updates': [
+            {'field': 'f3', 'equation': 'old_value + 10'}
+        ]
+    }
+]
