@@ -70,6 +70,16 @@ echo """<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>
 print_msg "Completed writing destructiveChanges_flow.xml"
 
 
-print_msg "Deploy command"
-echo sfdx force:source:deploy -u ${username}  -x destructiveChanges/package_flow.xml  --predestructivechanges destructiveChanges/destructiveChanges_flow.xml  -c --verbose --loglevel TRACE 
+print_msg "Deploy command in validate mode will be run now:"
+echo sfdx force:source:deploy -u ${username}  -x destructiveChanges/package_flow.xml  --predestructivechanges destructiveChanges/destructiveChanges_flow.xml  -c --verbose --loglevel TRACE
+sfdx force:source:deploy -u ${username}  -x destructiveChanges/package_flow.xml  --predestructivechanges destructiveChanges/destructiveChanges_flow.xml  -c --verbose --loglevel TRACE 
+
+# Check the exit status
+if [ $? -eq 0 ]; then
+  echo "Command was successful. Running deploy command..."
+  sfdx force:source:deploy -u ${username}  -x destructiveChanges/package_flow.xml  --predestructivechanges destructiveChanges/destructiveChanges_flow.xml  --verbose --loglevel TRACE 
+else
+  echo "Error: Deploy validation command failed."
+fi
+
 
