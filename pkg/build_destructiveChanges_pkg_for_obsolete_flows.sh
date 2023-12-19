@@ -48,7 +48,7 @@ print_msg "Running the query to get the JSON file "
 members=`sfdx mohanc:tooling:query -q FlowObsoleteTooling.soql -u ${username} -f json > /tmp/out.json; sfdx mohanc:data:jq -i /tmp/out.json -f  '.[] |  .Definition.DeveloperName + "-" + (.VersionNumber | tostring)' | sed 's/^"/<members>/' | sed 's/"/<\/members>/'`
 
 
-print_msg "Forming destructiveChanges.xml"
+print_msg "Forming destructiveChanges_flow.xml"
 
 members="abc";
 
@@ -60,20 +60,18 @@ echo """<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>
 </types>
 <version>56.0</version>
 </Package>
-""" > destructiveChanges/destructiveChanges.xml 
+""" > destructiveChanges/destructiveChanges_flow.xml 
 
 echo """
 <?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>
 <Package xmlns=\"http://soap.sforce.com/2006/04/metadata\">
 <version>56.0</version>
 </Package>
-""" > destructiveChanges/package.xml
+""" > destructiveChanges/package_flow.xml
 
-print_msg "Completed writing destructiveChanges.xml"
+print_msg "Completed writing destructiveChanges_flow.xml"
 
-#print_msg "Getting the html view of the destructiveChanges.xml"
-#sfdx mohanc:xml:transform -i destructiveChanges/destructiveChanges.xml -m Package
 
 print_msg "Deploy command"
-echo sfdx force:source:deploy -u ${username}  -x destructiveChanges/package.xml  --predestructivechanges destructiveChanges/destructiveChanges.xml  -c --verbose --loglevel TRACE 
+echo sfdx force:source:deploy -u ${username}  -x destructiveChanges/package_flow.xml  --predestructivechanges destructiveChanges/destructiveChanges_flow.xml  -c --verbose --loglevel TRACE 
 
