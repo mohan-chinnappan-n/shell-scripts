@@ -57,14 +57,13 @@ echo """<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>
 	<name>Flow</name>
 	${members}
 </types>
-<version>56.0</version>
+<version>58.0</version>
 </Package>
 """ > destructiveChanges/destructiveChanges_flow.xml 
 
-echo """
-<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>
+echo """<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\" ?>
 <Package xmlns=\"http://soap.sforce.com/2006/04/metadata\">
-<version>56.0</version>
+<version>58.0</version>
 </Package>
 """ > destructiveChanges/package_flow.xml
 
