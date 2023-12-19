@@ -50,7 +50,6 @@ members=`sfdx mohanc:tooling:query -q FlowObsoleteTooling.soql -u ${username} -f
 
 print_msg "Forming destructiveChanges_flow.xml"
 
-members="abc";
 
 echo """<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"yes\"?>
 <Package xmlns=\"http://soap.sforce.com/2006/04/metadata\">
