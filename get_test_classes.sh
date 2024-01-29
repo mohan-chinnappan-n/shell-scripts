@@ -1,0 +1,1 @@
+grep -i '<members>.*Test</members>$' package.xml | sed -n 's/.*<members>\(.*\)<\/members>.*/\1/p' | tr '\n' ',' | sed 's/,$//' | pbcopy
