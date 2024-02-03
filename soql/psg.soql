@@ -1,0 +1,2 @@
+SELECT Assignee.Name, PermissionSetGroup.DeveloperName 
+FROM PermissionSetAssignment 
