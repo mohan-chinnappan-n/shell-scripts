@@ -1,0 +1,9 @@
+{
+  "fields": [
+    {"name": "Name", "type": "name"},
+    {"name": "Email", "type": "email"},
+    {"name": "Phone", "type": "phone_number"},
+    {"name": "Company", "type": "company"},
+    {"name": "City", "type": "city"}
+  ]
+}
