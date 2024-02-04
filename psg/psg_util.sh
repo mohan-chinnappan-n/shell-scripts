@@ -76,6 +76,8 @@ open "$PS_IN_PSG.soql.csv"
 # -----------------------------------------------------------------------
 
 # Run Python script for user PSG details
+# get the script
+curl -O https://raw.githubusercontent.com/mohan-chinnappan-n/shell-scripts/master/psg/user_psg_details.py
 python3 user_psg_details.py "$ASSIGNEE_NAME" "$USERS_PSG.soql.csv" "$PS_IN_PSG.soql.csv" output_result.csv
 
 # Open the resulting CSV file
