@@ -56,12 +56,13 @@ Insert acct3;
 --------------------------------------------------------------------------
 NOTE:
 From Spring 24 release we have released UUID
+ref: https://help.salesforce.com/s/articleView?id=release-notes.rn_apex_uuid.htm&release=248&type=5
 --------------------------------------------------------------------------
 */
 
 /*  Uncomment the following lines for Spring 24
 
-UUID randomUuid = UUID.randomUUID(ctm);
+UUID randomUuid = UUID.randomUUID();
 // Prints the UUID string that was randomly generated
 System.Debug(randomUuid);
 
