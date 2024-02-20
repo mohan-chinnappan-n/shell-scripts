@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <version>56.0</version>
+
+<types>
+	<members>Green</members>
+	<members>Blue</members>
+	<name>ApexClass</name>
+</types>
+
+
+<types>
+	<members>Greeness</members>
+	<name>CustomObject</name>
+</types>
+</Package>
