@@ -6,6 +6,11 @@ This script is designed to find the commit ID for a given pull request number in
 Author: Mohan Chinnappan
 ------------------------------------------------------------------------------
 Usage:
+
+    check out the code into a local folder
+    cd to that folder
+    run:
+    
     bash find_commit_id.sh <pull_request_number> <target_branch>
 
 Arguments:
