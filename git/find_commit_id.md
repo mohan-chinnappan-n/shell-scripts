@@ -3,6 +3,11 @@
 
 This script is designed to find the commit ID for a given pull request number in a local Git repository without using the GitHub API.
 
+- Download the script
+
+```
+curl -O https://raw.githubusercontent.com/mohan-chinnappan-n/shell-scripts/master/git/find_commit_id.sh
+```
 ## Usage
 
 ```bash
