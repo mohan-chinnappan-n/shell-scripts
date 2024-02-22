@@ -10,8 +10,14 @@ curl -O https://raw.githubusercontent.com/mohan-chinnappan-n/shell-scripts/maste
 ```
 ## Usage
 
+
+ check out the code into a local folder
+    cd to that folder
+    run:
+
 ```bash
- bash find_commit_id.sh <pull_request_number> <target_branch>
+    bash find_commit_id.sh <pull_request_number> <target_branch>
+
 ```
 
 ## Arguments
