@@ -12,7 +12,7 @@ then executes the "sfdx sgd:source:delta" command to generate a delta of changes
  The delta is saved to a file named "_delta_.json".
 
 Usage:
-    bash prs-to-delta.sh <pr_number1> <target_branch1> <pr_number2> <target_branch2>
+    bash prs-to-delta.sh <pr_number1> <target_branch1> <pr_number2> <target_branch2> <need_gitdiff>
 
 Arguments:
     - pr_number1: The number of the first pull request.
@@ -20,6 +20,9 @@ Arguments:
 
     - pr_number2: The number of the second pull request.
     - target_branch2: The name of the target branch for the second pull request.
+
+    - need_gitdiff optional : default is 'n'
+        if 'y' it will create diff.csv file
 
 ----------------------------------------------------------------------------------------------------
 '
@@ -43,11 +46,45 @@ find_commit_id() {
     fi
 }
 
+generate_csv_plain() {
+    local from_commit=$1
+    local to_commit=$2
+    
+    # Generate git diff between the two commit IDs
+    git_diff=$(git diff --name-status $from_commit..$to_commit --)
+    
+    # Parse git diff and generate CSV
+    echo "Operation,File,Date,Comment" > diff.csv
+    while IFS=$'\t' read -r operation file; do
+        datetime=$(git log --pretty=format:%ai -n 1 -- "$file")
+        comment=$(git log --pretty=format:%B -n 1 -- "$file" | head -n 1)
+        echo "$operation,$file,$datetime,\"$comment\"" >> diff.csv
+    done <<< "$git_diff"
+}
+
+# Function to generate CSV file with diff information
+generate_csv() {
+    local from_commit=$1
+    local to_commit=$2
+    
+    # Generate git diff between the two commit IDs
+    git_diff=$(git diff --name-status $from_commit..$to_commit --)
+    
+    # Parse git diff and generate CSV
+    echo "Operation,File,Date,Comment,Committer Name" > diff.csv
+    while IFS=$'\t' read -r operation file; do
+        datetime=$(git log --pretty=format:%ai -n 1 -- "$file")
+        comment=$(git log --pretty=format:%B -n 1 -- "$file" | head -n 1)
+        committer=$(git log --pretty=format:%an -n 1 -- "$file")
+        echo "$operation,$file,$datetime,\"$comment\",$committer" >> diff.csv
+    done <<< "$git_diff"
+}
+
 # Main function
 main() {
     # Check if required arguments are provided
-    if [ $# -ne 4 ]; then
-        echo "Usage: $0 <pr_number1> <target_branch1> <pr_number2> <target_branch2>"
+    if [ $# -lt 3 ]; then
+        echo "Usage: $0 <pr_number1> <target_branch1> <pr_number2> <target_branch2> <need_gitdiff>"
         exit 1
     fi
 
@@ -56,6 +93,8 @@ main() {
     target_branch1=$2
     pr_number2=$3
     target_branch2=$4
+    need_gitdiff=$5
+    
 
     # Find commit ID for first pull request
     from_commit=$(find_commit_id "$pr_number1" "$target_branch1")
@@ -64,8 +103,18 @@ main() {
     to_commit=$(find_commit_id "$pr_number2" "$target_branch2")
 
     # Execute sfdx command
+    echo "=== Writing package.xml... ==="
+    echo sfdx sgd:source:delta -f "$from_commit" -t "$to_commit" -o . > _delta_.json
     sfdx sgd:source:delta -f "$from_commit" -t "$to_commit" -o . > _delta_.json
     cat _delta_.json 
+
+    if [ "$need_gitdiff" = "y" ]; then
+        echo "=== Writing git diff file diff.csv... ==="
+        generate_csv "$from_commit" "$to_commit"  
+        open diff.csv
+    else
+        echo "=== gitdiff not created ==="
+    fi
 }
 
 # Run main function with command-line arguments
