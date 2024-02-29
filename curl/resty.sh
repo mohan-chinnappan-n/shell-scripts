@@ -61,7 +61,7 @@ fi
 
 # Construct URL
 #URL="${INSTANCE_URL}/services/data/${API_VERSION}/${entity}/"
-URL="${INSTANCE_URL}/services/data/"
+URL="${INSTANCE_URL}/services/data/${entity}"
 echo "URL: $URL" >&2
 
 # Make the API request
