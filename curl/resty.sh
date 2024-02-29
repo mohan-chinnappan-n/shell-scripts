@@ -19,6 +19,7 @@ usage() {
     echo "Options:"
     echo "  --credentials <credentials_file>: Specify the path to the credentials JSON file."
     echo "  --entity <entity>: Specify the Salesforce entity to query."
+    echo "  --if-modified-since <date>: Specify the If-Modified-Since date in the format 'EEE, dd MMM yyyy HH:mm:ss z' Example: 'Tue, 23 Mar 2015 00:00:00 GMT'"
     echo "  --help: Display this help message."
     exit 1
 }
@@ -28,6 +29,8 @@ while [[ "$#" -gt 0 ]]; do
     case $1 in
         --credentials) credentials="$2"; shift ;;
         --entity) entity="$2"; shift ;;
+        --if-modified-since) if_modified_since="$2"; shift ;;
+
         --help) usage ;;
         *) echo "Unknown parameter passed: $1"; usage ;;
     esac
@@ -64,5 +67,13 @@ fi
 URL="${INSTANCE_URL}/services/data/${entity}"
 echo "URL: $URL" >&2
 
+# Add If-Modified-Since header if provided
+if [ -n "$if_modified_since" ]; then
+    header_if_modified_since="-H If-Modified-Since:${if_modified_since}"
+else
+    header_if_modified_since=""
+fi
+
+
 # Make the API request
-curl "$URL" -H "Authorization: Bearer $ACCESS_TOKEN" -H "X-PrettyPrint: 1"
+curl "$URL" -H "Authorization: Bearer $ACCESS_TOKEN" -H "X-PrettyPrint: 1" $header_if_modified_since
