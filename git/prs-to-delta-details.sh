@@ -2,7 +2,7 @@
 
 : '
 Script: prs-to-delta.sh
-Author: [Your Name]
+Author: Mohan Chinnappan 
 
 Description:
 This script takes two commit IDs as input arguments. It retrieves the changes between the two commits and generates a CSV file containing the operations (A/U/D/R), files involved, and datetime of the changes.
