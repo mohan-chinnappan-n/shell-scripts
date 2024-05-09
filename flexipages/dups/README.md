@@ -1,5 +1,6 @@
 # Script to look for duplicate Facet-Ids and Identifiers in Salesforce flexipages
 
+- [Script](./fp_dup_finder.sh)
 
 ## How to use?
 
