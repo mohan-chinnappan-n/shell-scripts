@@ -5,7 +5,8 @@
 ## How to use?
 
 ```bash
-Usage: fp_dup_finder.sh --input-folder <folder_path>
+Usage: fp_dup_finder.sh (--input-folder <folder_path> | --file <file_path>)
+
 ```
 
 ## Example
