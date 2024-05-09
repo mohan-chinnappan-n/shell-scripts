@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Script to look for duplicate Facet-Ids and Identifiers in Salesforce flexpages
+# Script to look for duplicate Facet-Ids and Identifiers in Salesforce flexipages
 # Author: mohan chinnappan
 #------------------------------------------------------------------------------
 
