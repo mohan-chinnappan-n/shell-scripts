@@ -9,6 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-libcurl": "^2.3.4"
+    "node-libcurl": "^3.0.0"
   }
 }
